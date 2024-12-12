@@ -49,13 +49,13 @@ namespace EndPointParametersTask.Repositories
             }
         }
 
-        public string AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
             try
             {
                 _context.Products.Add(product);
                 _context.SaveChanges();
-                return product.Name.ToString();
+                return product;
             }
             catch (Exception ex)
             {

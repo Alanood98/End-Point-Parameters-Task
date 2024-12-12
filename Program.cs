@@ -1,5 +1,9 @@
 
 using EndPointParametersTask;
+using EndPointParametersTask.Repositories;
+using EndPointParametersTask.Services;
+
+
 //using ClinicAppointmentApi.Repositories;
 //using ClinicAppointmentApi.Services;
 
@@ -18,6 +22,10 @@ namespace ClinicAppointmentApi
             // Add services to the container.
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Register repositories and services
+            builder.Services.AddScoped<IProductRepo, ProductRepo>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
 
             // Add services to the container.

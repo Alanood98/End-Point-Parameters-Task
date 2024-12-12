@@ -8,6 +8,6 @@ namespace EndPointParametersTask.Services
         ProductOutputDTO GetProductById(int id);
         ProductOutputDTO AddProduct(ProductInputDTO productInput);
         ProductOutputDTO UpdateProduct(int id, ProductInputDTO productInput);
-        string DeleteProduct(int id);
+        bool DeleteProduct(int id);
     }
 }
