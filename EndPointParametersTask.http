@@ -1,0 +1,6 @@
+@EndPointParametersTask_HostAddress = http://localhost:5219
+
+GET {{EndPointParametersTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
