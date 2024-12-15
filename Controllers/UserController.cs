@@ -10,9 +10,11 @@ using EndPointParametersTask.Services;
 using Microsoft.Extensions.Configuration;
 using EndPointParametersTask.Models;
 using WebApplication4.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EndPointParametersTask.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[Controller]")]
     public class UserController : ControllerBase
@@ -24,7 +26,7 @@ namespace EndPointParametersTask.Controllers
             _userService = userService;
             _configuration = configuration;
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult addUser([FromBody] User user)
         {
@@ -39,8 +41,8 @@ namespace EndPointParametersTask.Controllers
 
             return Ok(user.UId);
         }
-
-        [HttpGet("GetAllProducts")]
+        [AllowAnonymous]
+        [HttpGet("GetAllUsers")]
         public IActionResult login(string email, string password)
         {
 

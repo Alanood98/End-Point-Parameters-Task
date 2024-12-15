@@ -2,6 +2,8 @@
 
 using EndPointParametersTask.Models;
 
+
+
 namespace EndPointParametersTask
 {
     public class ApplicationDbContext : DbContext
@@ -10,6 +12,6 @@ namespace EndPointParametersTask
         {
         }
         public DbSet<Product> Products { get; set; }
-        
+        public DbSet<User> Users { get; set; }
     }
 }
